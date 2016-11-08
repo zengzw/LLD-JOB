@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+     
+	
+ 	<!--  职位更新，每天晚上十二点更新-->
+    <bean name="jobInfoUpdateTimer" class="com.tsh.job.timer.JobInfoUpdateTimer" />
+    <bean id="jobInfoUpdateJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="jobInfoUpdateTimer"/>
+        <property name="targetMethod" value="start"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    <bean id="quartzJobInfoTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="jobInfoUpdateJob"/>
+       <property name="cronExpression" value="0 0 0 * * ?"/> 
+        <property name="description" value="job_info_udpate_quartz_task"/>
+    </bean>
+  
+    
+   <!--  用户报名更新。每天晚上十二点执行 -->
+    <bean name="userApplyTimer" class="com.tsh.job.timer.UserApplyJobTimer" />
+    <bean id="quartzUserApplyJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="userApplyTimer"/>
+        <property name="targetMethod" value="start"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    <bean id="quartzUserApplyTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="quartzUserApplyJob"/>
+       <property name="cronExpression" value="0 0 0 * * ?"/> 
+        <property name="description" value="job_userApply_task"/>
+    </bean>
+   
+   
+    
+   <!--  用户报名同步失败重试。每天晚上十二点执行 -->
+    <bean name="userApplyErrorTimer" class="com.tsh.job.timer.UserApplyJobErrorTimer" />
+    <bean id="quartzUserApplyErrorJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="userApplyErrorTimer"/>
+        <property name="targetMethod" value="start"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    <bean id="quartzUserApplyErrorTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="quartzUserApplyErrorJob"/>
+       <property name="cronExpression" value="0 0 23 * * ?"/> 
+        <property name="description" value="job_userApplyError_task"/>
+    </bean>
+    
+    
+    <bean name="JobTimerScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="quartzUserApplyTrigger"/>
+                <ref bean="quartzJobInfoTrigger"/>
+                <ref bean="quartzUserApplyErrorTrigger"/>
+            </list>
+        </property>
+    </bean>	 
+  
+    
+<bean class="com.github.ltsopensource.spring.quartz.QuartzLTSProxyBean">
+        <property name="clusterName" value="${clusterName}"/>
+        <property name="registryAddress" value="${registryAddress}"/>
+        <property name="nodeGroup" value="job_quartz_trade_TaskTracker"/>
+        <property name="configs">
+            <props>
+                <prop key="job.fail.store">mapdb</prop>
+            </props>
+        </property>
+    </bean> 
+
+</beans>

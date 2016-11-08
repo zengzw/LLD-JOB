@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <title>招工服务</title>
+    <link rel="stylesheet" type="text/css" href="../../static/tsh/1.0.0/themes/easyui.css?gversion=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="../../static/tsh/1.0.0/themes/style.css?gversion=1.0.0" />
+    <link rel=stylesheet  href="../../static/tsh/1.0.0/plugins/ueditor/themes/default/css/ueditor.min.css" />
+    <script src="../../static/tsh/1.0.0/jquery.min.js?gversion=1.0.0"></script>
+    <script src="../../static/tsh/1.0.0/jquery.easyui.min.js?gversion=1.0.0"></script>
+    <script src="../../static/tsh/1.0.0/jquery.easyui.extend.min.js?gversion=1.0.0"></script>
+    <script src="../../static/tsh/1.0.0/webHelper.js"></script>
+   
+	<script src="http://tshcdn.tsh365.cn/ued/ued-common.js"></script>  
+    <style type="text/css">
+    .text_right{
+        text-align: right;
+    }
+    </style> 
+</head>
+<body style="margin:0 20px;">
+
+ <div id="tb"  class="datagrid-toolbar">
+         <div id="tsh-title">
+          <h3><span class="t1">报名列表</span></h3>
+          <div class="title-border"></div>
+         </div>
+         <div class="datagrid-container">
+          <form class="tsh-toolbar" id="query_form">
+             <label>
+               <span>报名编号： <input name="code" data-options="panelHeight:'auto'" id="code" class="easyui-textbox" maxlength="22" style="width:150px;height:30px;" /></span>
+            </label>
+            <label id="platform">
+               <span>所属区域:
+                 <input name="contactProvince" id="contactProvince" prompt="选择省/市" data-options="panelHeight:'250px'"  class="easyui-combobox" style="width:100px;height:30px;" />
+                 <input name="contactCity" id="contactCity" prompt="选择市/区" data-options="panelHeight:'250px'"  class="easyui-combobox" style="width:100px;height:30px;" />
+                 <input name="contactArea" id="contactArea" prompt="选择县域中心" data-options="panelHeight:'250px'"  class="easyui-combobox" style="width:100px;;height:30px;" />
+
+               </span>
+            </label>
+            <label id="shop">
+               <span>网点名称:
+                 <input name="shopId" id="shopId" prompt="选择网点" data-options="panelHeight:'250px'"  class="easyui-combobox" style="width:200px;height:30px;" />
+               </span>
+            </label>
+            <label >
+               <span>姓名:
+                 <input name="name" id="name" data-options="panelHeight:'auto'" class="easyui-textbox" style="width:100px;height:30px;"/>                 
+               </span>
+            </label>
+            <label >
+               <span>性别:
+                 <input name="sex" id="sex" data-options="panelHeight:'auto'"  class="easyui-combobox" style="width:100px;height:30px;"/>                 
+               </span>
+            </label>
+            </label>
+            <label >
+               <span>电话:
+                 <input name="phone" id="phone"  data-options="panelHeight:'auto'"  class="easyui-textbox" style="width:150px;height:30px;"/>
+               </span>
+            </label>
+            <label >
+               <span>报名时间:
+                 <input name="beginCreateTime" id="beginCreateTime"   class="easyui-datebox" editable="false"   data-options="delay:500, editable:false"  style="width:150px; height:30px;" />
+                 -
+                 <input name="endCreateTime" id="endCreateTime"  class="easyui-datebox" editable="false"   data-options="delay:500, editable:false" validType="md['#beginCreateTime']" style="width:150px; height:30px;" />
+               </span>
+            </label>
+            <br>
+            <label >
+               <span>公司名称:
+                 <input name="compName" id="compName" data-options="panelHeight:'auto'"  class="easyui-textbox" style="width:150px;height:30px;"/>                 
+               </span>
+            </label>
+            
+            <label >
+               <span>职位分类:
+                 <input name="categoryPid" id="categoryPid" data-options="panelHeight:'auto'"  class="easyui-combobox" style="width:100px;height:30px;"/>                 
+               </span>
+            </label>
+            <label >
+               <span>职位名称:
+                 <input name="categoryCid" id="categoryCid" data-options="panelHeight:'auto'"  class="easyui-combobox" style="width:100px;height:30px;"/>                 
+               </span>
+            </label>
+            <label >
+               <span>工友状态:
+                 <input name="jobStatus" id="jobStatus" data-options="panelHeight:'auto'"  class="easyui-combobox" style="width:100px;height:30px;"/>                 
+               </span>
+            </label>
+             <label id="platform">
+               <span>职位地区:
+                 <input name="provinceId" id="provinceId" prompt="选择省/市" data-options="panelHeight:'250px'"  class="easyui-combobox" style="width:100px;height:30px;" />
+                 <input name="cityId" id="cityId" prompt="选择市/区" data-options="panelHeight:'250px'"  class="easyui-combobox" style="width:180px;height:30px;" />
+               </span>
+            </label>
+            <label><a class='btn btn-1' id="search_btn" ><i class='i-search'></i>搜索</a></label>
+             <label><a href="#" id="clean" class="btn">清空</a></label>
+           </form>
+          </div>
+          
+       </div>
+<div style="height:800px;">
+<table id="dataGrid"  class="easyui-datagrid">
+</table>
+</div>
+<script type="text/javascript"  src="/static/tsh/common/commonTools.js" ></script>
+ <script type="text/javascript" src="/static/tsh/common/initAddress.js"></script>
+ <script type="text/javascript" src="/static/tsh/common/initCommomData.js"></script>
+  <script type="text/javascript" src="/static/tsh/userApply/list.js"></script> 
+ 
+<script type="text/javascript">
+    $(function(){
+       //显示县域信息
+        if(userApplyList.roleType == 3){
+        	$("#platform").hide();
+        	  configCenter.init_shop(userApplyList.areaId);
+        }else{  // 显示平台信息
+        	$("#shop").hide();
+        	 configCenter.init_platform();
+        } 
+    });
+</script>
+</body>
+</html>

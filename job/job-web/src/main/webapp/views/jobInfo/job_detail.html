@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <meta name="renderer" content="webkit">
+    <title>报名详情</title>
+    <link rel="stylesheet" type="text/css" href="../../../../static/tsh/1.0.0/themes/easyui.css?gversion=1.0.0">
+    <link rel="stylesheet" type="text/css" href="../../../../static/tsh/1.0.0/themes/style.css?gversion=1.0.0">
+    <link rel="stylesheet" type="text/css" href="/static/tsh/1.0.0/themes/image-box/image-box.css?gversion=1.0.0">
+    <link rel="stylesheet" type="text/css" href="../../../../static/home/1.0.0/main.css?gversion=1.0.0">
+    <link rel="stylesheet" type="text/css" href="../../../../static/coupon/1.0.0/page.css?gversion=1.0.0">
+    <script src="../../../../static/tsh/1.0.0/jquery.min.js?gversion=1.0.0"></script>
+    <script src="../../../../static/tsh/1.0.0/jquery.easyui.min.js?gversion=1.0.0"></script>
+    <script src="../../../../static/tsh/1.0.0/jquery.easyui.extend.min.js"></script>
+    <script src="../../../../static/tsh/1.0.0/plugins/jquery-tmpl/jquery.tmpl.min.js"></script>
+    <script src="/static/tsh/1.0.0/plugins/image-box/jquery.imgbox.pack.js"></script>
+</head>
+<body style="margin:0 20px;">
+<div id="tsh-title">
+    <h3><span class="t1">&nbsp;&nbsp;&nbsp;&nbsp;招工职位详情</span></h3>
+    <div class="title-border"></div>
+</div>
+<form id="viewcoupon" method="get" class="form">
+    <table cellpadding="5" cellspacing="10">
+        <tr>
+            <td class="title" align="right">职位来源：</td>
+            <td>
+                 <span id="title">蓝领带</span>
+            </td>
+        </tr>
+        <tr>
+	       <td class="title" align="right">职位编码：</td>
+	             <td>
+		            <span id="code"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">职位地区：</td>
+	             <td>
+		            <span id="address"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">公司名：</td>
+	             <td>
+		            <span id="compName"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">职位分类：</td>
+	             <td>
+		            <span id="categoryOne"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">职位名称：</td>
+	             <td>
+		            <span id="categoryTwo"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">招工标题：</td>
+	             <td>
+		            <span id="jobName"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">工资待遇：</td>
+	             <td>
+		            <span id="salary"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">企业亮点：</td>
+	             <td>
+		            <span id="hightLigets"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">已报名（总报名数）：</td>
+	             <td>
+		            <span id="applyCount"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">共招聘（人）：</td>
+	             <td>
+		            <span id="recruitmentNumber"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">截止日期：</td>
+	             <td>
+		            <span id="deadline"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">入职奖励：</td>
+	             <td>
+		            <span id="entryAward"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">工资详情：</td>
+	             <td>
+		            <span id="salaryDesc"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">福利待遇：</td>
+	             <td>
+		            <span id="benefit"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">工作内容：</td>
+	             <td>
+		            <span id="workContent"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">工作环境：</td>
+	             <td>
+		            <span id="environment"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">职位要求：</td>
+	             <td>
+		            <span id="requirements"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">企业介绍：</td>
+	             <td>
+		            <span id="introduction"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">工厂图片：</td>
+	             <td>
+		            <span id="images">  </span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">职位状态：</td>
+	             <td>
+		            <span id="status"></span>
+	             </td>
+		 </tr>
+        <tr>
+	       <td class="title" align="right">上架状态：</td>
+	             <td>
+		            <span id="tshStatus"></span>
+	             </td>
+		 </tr>
+		
+    <tr>
+        <td></td>
+        <td><a href="javascript:void(0)" class="btn btn-1" id="view_back" style="margin-top: 10px;"><i class="m-77"></i>返回</a></td>
+    </tr>
+    </table>
+</form>
+
+</body>
+<script type="text/javascript"  src="../../static/tsh/common/commonTools.js" ></script>
+  <script type="text/javascript" src="/static/tsh/jobInfo/job_detail.js"></script>
+</html>

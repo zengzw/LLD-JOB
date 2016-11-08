@@ -1,0 +1,102 @@
+i {
+	width: .7407rem;
+	height: .7407rem;
+	display: inline-block;
+}
+
+i::selection {
+	background: none
+}
+
+i.i-radius {
+	width: 30px;
+	height: 30px;
+	background: #a8a8a8;
+	text-align: center;
+	border-radius: 50%;
+	box-shadow: 0px 1px 0px 0px rgb(255, 255, 255);
+}
+
+.on i.i-radius {
+	background: #4fc1e9
+}
+
+.on i.i-radius-yellow {
+	background: #f7c324
+}
+
+i.i-setting {
+	background-position: -90px -1px;
+}
+
+i.i-account {
+	background-position: -19px -1px
+}
+
+i.i-shutdown {
+	background-position: -51px -1px
+}
+
+i.i-user {
+	background-position: -54px 0px
+}
+
+i.i-wallet {
+	background-position: -72px 0px
+}
+
+i.i-logout {
+	background-position: -180px 0px
+}
+
+i.i-edit {
+	background-position: -126px 0px
+}
+
+i.i-edit-white {
+	background-position: -126px 0px
+}
+
+i.i-setting-org {
+	background-position: -108px 0px
+}
+
+i.i-rob {
+	background: url(../images/icons/i_rob.png) no-repeat;
+	width: 1.8rem;
+	height: 1.65rem;
+	background-size: cover;
+}
+
+i.i-rob-off {
+	background: url(../images/icons/i_rob_off.png) no-repeat;
+	background-size: cover;
+}
+
+i.i-remindClock {
+	background: url(../images/icons/remindClock.png) no-repeat;
+	width: .7407rem;
+	height: .7407rem;
+	background-size: cover;
+	vertical-align: middle
+}
+
+i.i-cart {
+	background: url(../images/icons/cart.png) no-repeat;
+	width: .97777777777rem;
+	height: .7408rem;
+	background-size: cover;
+	vertical-align: middle
+}
+
+i.i-valid {
+	background-position: -162px 0px
+}
+
+i.i-errors {
+	background-position: -144px 0px
+}
+
+i.i-nopassword {
+	background: url(../images/1280/nopassword.png) no-repeat center left;
+}

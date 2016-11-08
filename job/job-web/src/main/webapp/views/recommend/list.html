@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <title>招工地区热门招工推荐</title>
+    <link rel="stylesheet" type="text/css" href="../../static/tsh/1.0.0/themes/easyui.css?gversion=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="../../static/tsh/1.0.0/themes/style.css?gversion=1.0.0" />
+    <link rel=stylesheet  href="../../static/tsh/1.0.0/plugins/ueditor/themes/default/css/ueditor.min.css" />
+    <script src="../../static/tsh/1.0.0/jquery.min.js?gversion=1.0.0"></script>
+    <script src="../../static/tsh/1.0.0/jquery.easyui.min.js?gversion=1.0.0"></script>
+    <script src="../../static/tsh/1.0.0/jquery.easyui.extend.min.js?gversion=1.0.0"></script>
+    <script src="../../static/tsh/1.0.0/webHelper.js"></script>
+</head>
+<body style="margin:0 20px;">
+<div id="tsh-title">
+    <h3><span class="t1">招工地区热门招工推荐</span></h3>
+    <div class="title-border"></div>
+</div>
+<div>
+    <form class="tsh-toolbar" id="searchForm">
+       <table>
+         <tr>
+           <td width="5%"  align="rigth">
+            推荐地区：
+           </td>
+           <td width="22%" align="left">     
+           	<select name="RCountry" id="country"  class="easyui-combobox" style="height:28px;width:120px;">
+				<option value="-1">请选择</option>		
+				<option value="1">全国</option>		
+			</select>       
+            <input name="RProvince" id="contactProvince" prompt="请选择省份" class="easyui-combobox" style="height:28px;width:120px;"/>  
+            <input name="rCity" id="contactCity" prompt="请选择市区" class="easyui-combobox" style="height:28px;width:120px;"/>
+           </td>           
+           <td width="5%" align="rigth">
+            职位地区：
+           </td>
+           <td width="22%" align="left">            
+            <input name="JProvince" id="jobProvince" prompt="请选择省份"  class="easyui-combobox" style="height:28px;width:120px;"/>  
+			<input name="JCity" id="jobCity" prompt="请选择市区"    class="easyui-combobox" style="height:28px;width:120px;"/>         
+           </td>
+           <td width="5%" align="rigth">
+            职位分类：
+           </td>
+           <td width="12%" align="left">            
+            <input name="CPid" id="categoryPid" prompt="请选择" data-options="panelHeight:'250px'"  
+            class="easyui-combobox" style="width:120px;height:30px;" />
+            </span>            
+           </td>
+           <td width="5%" align="rigth">
+            职位名称：
+           </td>
+           <td width="40%" align="left">            
+            <input name="CCid" id="categoryCid" prompt="请选择" data-options="panelHeight:'250px'"  
+            class="easyui-combobox" style="width:120px;height:30px;" />           
+           </td>                                                     
+         </tr>
+         <tr>
+           <td width="5%" align="rigth">
+            职位编号：
+           </td>
+           <td width="10%" align="left">            
+            <input   id="code" name="code" type="text" class="easyui-textbox" 
+            data-options="validType:'length[1,22]',prompt:'请输职位编号'"  style="width:250px; height:30px;" />           
+           </td>          
+           <td>
+           公司名称：
+           </td>
+           <td>           
+            <input   id="compName" name="compName" type="text" class="easyui-textbox" 
+            data-options="validType:'length[1,25]',prompt:'请输公司名称'"  style="width:250px; height:30px;" />          
+           </td> 
+           <td>
+            上架状态：
+           </td>
+           <td>            
+			<select name="status" id="status"  class="easyui-combobox" style="height:28px;width:120px;">
+				<option value="-1">全部</option>
+                <option value="2">已下架</option>
+                <option value="1">已上架</option>			
+			</select>         
+           </td>  
+ 
+           <td colspan="4">
+                 <label><a id="searchId" class='btn btn-1'  ><i class='i-search'></i>搜索</a></label>
+                 <label><a class="btn" href="#" id="reset">清空</a></label>              
+           </td>                                           
+         </tr>
+       </table>
+    </form>
+</div>
+<div>
+  <table>
+    <tr>
+      <td>
+        <a id="searchId" class='btn btn-1' href="/views/recommend/post.html" >添加推荐</a>
+      </td>
+      <!--td>
+        <a id="searchId" class='btn btn-1'  >查看已推荐地区简表</a>
+      </td-->      
+    </tr>
+  </table>
+</div>
+<div style="height:400px;">
+<table id="dataGrid"  class="easyui-datagrid">
+</table>
+</div>
+	<script src="http://tshcdn.tsh365.cn/ued/ued-common.js"></script>  
+<script type="text/javascript"  src="/static/tsh/common/commonTools.js" ></script>
+ <script type="text/javascript" src="/static/tsh/common/initAddress.js"></script>
+<script type="text/javascript" src="/static/tsh/common/initCommomData.js"></script>
+<script type="text/javascript" src="/static/tsh/recommend/list.js"></script>    
+ 
+</body>
+</html>

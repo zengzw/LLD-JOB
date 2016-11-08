@@ -1,0 +1,504 @@
+/* ------------------------------------------------------------------------- *
+ *  Reset - http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126
+ * ------------------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+	em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+	b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+	details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+	output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup,
+	menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@media ( min-width :321px) {
+	html {
+		font-size: 10px !important;
+	}
+}
+
+@media ( min-width :359px) {
+	html {
+		font-size: 12px !important;
+	}
+}
+
+@media ( min-width :385px) {
+	html {
+		font-size: 12px !important;
+	}
+}
+
+@media ( min-width :479px) {
+	html {
+		font-size: 15px !important;
+	}
+}
+
+@media ( min-width :639px) {
+	html {
+		font-size: 20px !important;
+	}
+}
+
+@media ( min-width :719px) {
+	html {
+		font-size: 20px !important;
+	}
+}
+
+@media ( min-width :767px) {
+	html {
+		font-size: 24px !important;
+	}
+}
+
+@media ( min-width :1023px) {
+	html {
+		font-size: 32px !important;
+	}
+}
+
+@media ( min-width :1079px) {
+	html {
+		font-size: 33.75px !important;
+	}
+}
+
+@media ( min-width :1279px) {
+	html {
+		font-size: 40px !important;
+	}
+}
+
+@media ( min-width :1367px) {
+	html {
+		font-size: 42px !important;
+	}
+}
+
+@media ( min-width :1439px) {
+	html {
+		font-size: 45px !important;
+	}
+}
+
+@media ( min-width :1659px) {
+	html {
+		font-size: 50px !important;
+	}
+}
+
+@media ( min-width :1919px) {
+	html {
+		font-size: 60px !important;
+	}
+}
+
+/* ------------------------------------------------------------------------- *
+ *  Base Styles
+/* ------------------------------------------------------------------------- */
+body {
+	background: #eaeaea;
+	color: #666;
+}
+
+::selection {
+	background: none
+}
+
+::-moz-selection {
+	background: none
+}
+
+::-webkit-selection {
+	background: none
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+	outline: none;
+}
+
+li {
+	outline: none;
+}
+
+*, :focus, :hover, :active {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	outline: 0;
+}
+
+a:hover {
+	color: #333;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a, a:before, a:after {
+	-webkit-transition-property: background color;
+	-webkit-transition-duration: 0.2s;
+	-webkit-transition-timing-function: ease;
+	-moz-transition-property: background color;
+	-moz-transition-duration: 0.2s;
+	-moz-transition-timing-function: ease;
+	-o-transition-property: background color;
+	-o-transition-duration: 0.2s;
+	-o-transition-timing-function: ease;
+	transition-property: background color;
+	transition-duration: 0.2s;
+	transition-timing-function: ease;
+}
+
+a img {
+	-webkit-transition: opacity 0.2s ease;
+	-moz-transition: opacity 0.2s ease;
+	-o-transition: opacity 0.2s ease;
+	transition: opacity 0.2s ease;
+}
+
+address, cite, em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: bold;
+}
+
+.fl, .left, .alignleft {
+	float: left;
+}
+
+.fr, .right, .alignright {
+	float: right;
+}
+
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.pl {
+	position: absolute;
+	left: 0
+}
+
+/*  base : clear
+/* ------------------------------------ */
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.group:before, .group:after {
+	content: "";
+	display: table;
+}
+
+.group:after {
+	clear: both;
+}
+
+.group {
+	zoom: 1;
+}
+
+/*  base : font awesome square size
+/* ------------------------------------ */
+html {
+	font-size: 62.5%; /*10 ÷ 16 × 100% = 62.5%*/
+}
+
+body {
+	font-size: 1rem;
+}
+
+p {
+	font-size: 1rem;
+}
+
+/*禁止文本选择*/
+
+/*  base : fonts
+/* ------------------------------------ */
+body {
+	font-family: "微软雅黑", Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 2.2rem
+}
+
+h2 {
+	font-size: 2rem
+}
+
+h3 {
+	font-size: 1.8rem
+}
+
+h4 {
+	font-size: 1.6rem
+}
+
+h5 {
+	font-size: 1.4rem
+}
+
+h6 {
+	font-size: 1.2rem;
+}
+
+/*font-size*/
+.tc {
+	text-align: center;
+}
+
+.tl {
+	text-align: left;
+}
+
+.valignm {
+	vertical-align: middle;
+}
+
+.valignb {
+	vertical-align: bottom;
+}
+/*基于1080p的像素规则 除以33.75*/
+.f18 {
+	font-size: .53333rem
+}
+
+.f20 {
+	font-size: .5926rem
+}
+
+.f22 {
+	font-size: .6518rem
+}
+
+.f24 {
+	font-size: .7111rem
+}
+
+.f26 {
+	font-size: .7703rem
+}
+
+.f28 {
+	font-size: .8296rem
+}
+
+.f30 {
+	font-size: .88888rem
+}
+
+.f32 {
+	font-size: .9481rem
+}
+
+.f36 {
+	font-size: 1.0666rem
+}
+
+.f38 {
+	font-size: 1.1259rem
+}
+
+.f40 {
+	font-size: 1.1852rem
+}
+
+.f44 {
+	font-size: 1.3037rem
+}
+/*color*/
+.orange {
+	color: #ff4400
+}
+
+.bg-orange {
+	background: #ff4400
+}
+
+.grey {
+	color: #878787
+}
+
+.grey-light {
+	color: #a0a0a0
+}
+
+.green {
+	color: #7bc00e
+}
+
+.black {
+	color: #333
+}
+
+.blue {
+	color: #3fafee
+}
+
+.blue-dark {
+	color: #02c1b3
+}
+
+.blue-light {
+	color: #3fafee
+}
+
+.blue3 {
+	color: #3ad4cb
+}
+
+.pink {
+	color: #ff6363
+}
+
+.span12 {
+	width: 100%;
+}
+
+.span1 {
+	width: 8.3333%
+}
+
+.span2 {
+	width: 16.6666%
+}
+
+.span3 {
+	width: 25%
+}
+
+.span4 {
+	width: 33.3333%
+}
+
+.span4-5 {
+	width: 37.5%
+}
+
+.span5 {
+	width: 41.6666%
+}
+
+.span5-5 {
+	width: 45.8333%
+}
+
+.span6 {
+	width: 50%
+}
+
+.span6-5 {
+	width: 54.1666%
+}
+
+.span7 {
+	width: 58.3333%
+}
+
+.span7-5 {
+	width: 62.5%
+}
+
+.span8 {
+	width: 66.6666%
+}
+
+.span9 {
+	width: 75%
+}
+
+.span10 {
+	width: 83.3333%
+}
+
+.span11 {
+	width: 91.6666%
+}
+
+.loading {
+	margin: 0;
+	width: 100%;
+	position: fixed;
+	top: 100px;
+	bottom: 0px;
+	background: url(../images/icons/loading1.gif) no-repeat center center;
+}
+
+.error {
+	height: 100%;
+	text-align: center;
+}
+
+.error {
+	padding-top: 266px;
+	height: 100px;
+	line-height: 100px;
+}
+
+.error h3 {
+	color: #00aca0;
+	font-size: 32px;
+	font-weight: normal;
+}
+
+.scroll-loading {
+	text-align: center;
+}
+
+a {
+	-moz-user-select: none; /*火狐*/
+	-webkit-user-select: none; /*webkit浏览器*/
+	-ms-user-select: none; /*IE10*/
+	-khtml-user-select: none; /*早期浏览器*/
+	user-select: none;
+}

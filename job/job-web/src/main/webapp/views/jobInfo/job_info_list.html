@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <title>招工服务</title>
+    <link rel="stylesheet" type="text/css" href="../../static/tsh/1.0.0/themes/easyui.css?gversion=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="../../static/tsh/1.0.0/themes/style.css?gversion=1.0.0" />
+
+    <script src="../../static/tsh/1.0.0/jquery.min.js?gversion=1.0.0"></script>
+    <script src="../../static/tsh/1.0.0/jquery.easyui.min.js?gversion=1.0.0"></script>
+    <script src="../../static/tsh/1.0.0/jquery.easyui.extend.min.js?gversion=1.0.0"></script>
+    <script src="../../../../static/tsh/1.0.0/easyloader.js?gversion=1.0.0"></script>
+    <script src="../../../../static/tsh/1.0.0/jquery.easyui.extend.min.js"></script>
+    <script src="../../../../static/tsh/1.0.0/plugins/datagrid-cellediting.js"></script>
+</head>
+<body style="margin:0 20px;">
+<div id="tsh-title">
+    <h3><span class="t1">招工列表</span></h3>
+    <div class="title-border"></div>
+</div>
+<div>
+    <form class="tsh-toolbar" id="searchForm">
+        <label>
+            <span>职位编号：
+            <input id="codeId" name="code" type="text" class="easyui-textbox" data-options="validType:'length[1,25]',prompt:'请输入信息编号'"  style="width:150px; height:30px;" /></span>
+        </label>
+        
+        <label>
+            <span>职位地区：
+            <input name="provinceId" id="provinceId" prompt="选择省/市" data-options="panelHeight:'250px'"  class="easyui-combobox" style="width:100px;height:30px;" />
+            <input name="cityId" id="cityId" prompt="选择市/区" data-options="panelHeight:'250px'"  class="easyui-combobox" style="width:100px;height:30px;" />
+        </label>
+        
+        <label>
+           <span>公司名称：
+             <input id="compName" name="compName"  data-options="validType:'length[1,30]',prompt:'请输入公司名称',panelHeight:'auto'"  class="easyui-textbox" style="width:140px;height: 30px;" />
+           </span>
+        </label>
+        
+        <label>
+            <span>报名人数：
+            <input   id="minApplyCount" name="minApplyCount" type="text" class="easyui-textbox" data-options="validType:'length[1,200]'"  style="width:100px; height:30px;" /></span>
+            -
+            <input   id="maxApplyCount" name="maxApplyCount" type="text" class="easyui-textbox" data-options="validType:'length[1,200]'"  style="width:100px; height:30px;" /></span>
+        </label>
+        <br>
+         <label>
+            <span>职位分类：
+            <input name="jobCategoryPid" id="jobCategoryPid" prompt="请选择" data-options="panelHeight:'250px'"  class="easyui-combobox" style="width:100px;height:30px;" />
+        </label>
+        
+         <label>
+            <span>职位名称：
+            <input name="jobCategoryCid" id="jobCategoryCid" prompt="请选择" data-options="panelHeight:'250px'"  class="easyui-combobox" style="width:100px;height:30px;" />
+        </label>
+        
+        <label>
+            <span>招工标题：
+            <input   id="jobName" name="jobName" type="text" class="easyui-textbox" data-options="validType:'length[1,50]',prompt:'请输入信息联系人'"  style="width:150px; height:30px;" /></span>
+        </label>
+        
+        <label>
+            <span>职位状态：
+            <input name="status" id="status" prompt="请选择" data-options="panelHeight:'150px'"  class="easyui-combobox" style="width:100px;height:30px;" />
+        </label>
+        
+        
+        <label>
+            <span>上架状态：
+            <input name="tshStatus" id="tshStatus" prompt="请选择" data-options="panelHeight:'150px'"  class="easyui-combobox" style="width:100px;height:30px;" />
+        </label>
+        
+
+       <!--  <label >
+           <span>发布时间:
+                <input id="publishStartTimeId" name="publishStartTime"  editable="false" class="easyui-datetimebox"   style="width:150px; height:30px;"/>&nbsp;到&nbsp;
+                <input id="publishEndTimeId" name="publishEndTime"  editable="false" class="easyui-datetimebox"   style="width:150px; height:30px;"/>
+           </span>
+        </label> -->
+        <label><a id="search_btn" class='btn btn-1'  ><i class='i-search'></i>搜索</a></label>
+        <label><a id="clearId"  class="btn">清空</a></label>
+    </form>
+</div>
+<div  style="border:1px solid #dee3e6; padding:10px;">
+    <label>
+      <a href="#" class="btn " id="allCheck">
+	       全选
+	  </a>
+       <a href="#" class="btn " id="removeCheck">
+      	反选
+     </a>
+	    <a href="#"  class="btn btn-2" id="bath_up">
+	  	      批量上架
+	     </a>
+	    <a href="#" class="btn " id="bath_down">
+	      	 批量下架
+	     </a>
+    </label>
+</div>
+<table id="dataGrid"  class="easyui-datagrid"  ></table>
+</body>
+
+<script type="text/javascript">
+  /*   $(function(){
+        //初始化页面
+        commonTools.getByAjax("../../server/getServerInfo.do",function(data){
+            var initData = {};
+            initData.roleType = data.userInfo.roleType;
+            pageManager.init(initData);
+        });
+    }); */
+</script>
+
+<link rel=stylesheet  href="../../static/tsh/1.0.0/plugins/ueditor/themes/default/css/ueditor.min.css" />
+<script type="text/javascript"  src="../../static/tsh/common/commonTools.js" ></script>
+<script type="text/javascript"  src="../../static/tsh/common/initCommomData.js" ></script>
+<script type="text/javascript" src="../../static/tsh/1.0.0/plugins/others/webuploader-0.1.5/webuploader.nolog.min.js"></script>
+<script type="text/javascript"  src="../../static/tsh/jobInfo/job_info_list.js" ></script>
+</html>

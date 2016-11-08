@@ -1,0 +1,176 @@
+a.btn, input.btn {
+	border-style: solid;
+	display: inline-block;
+	text-align: center;
+	border-width: 1px;
+	border-color: #9d9d9d;
+	border-radius: .9rem;
+	background-color: #fff;
+	padding: 0 .55rem;
+	height: 1.1rem;
+	line-height: 1.1rem;
+	font-weight: normal;
+	color: #333;
+	font-family: "微软雅黑";
+	font-size: .75rem;
+	opacity: .95;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	cursor: pointer;
+	hutia: expression(this.onselectstart = function(){return(false)
+}
+
+);
+}
+a.btn::selection {
+	background: none;
+	outline: none
+}
+
+a.btn::-moz-selection {
+	background: none;
+	outline: none
+}
+
+a.btn::-webkit-selection {
+	background: none;
+	outline: none
+}
+
+a.btn:hover {
+	opacity: 1
+}
+
+a.btn-nb {
+	background: none;
+	border: none;
+}
+
+input.btn {
+	padding: 0rem;
+	margin: 0;
+	vertical-align: top;
+	height: 3.2rem;
+	line-height: 3.2rem;
+}
+
+a.btn-org, input.btn-org {
+	background-color: #ff4400;
+	color: #fff;
+	border-color: #ff4400;
+}
+
+a.btn-org-nb {
+	background-color: none;
+	color: #ff4400;
+	border-color: #ff4400;
+	opacity: 1
+}
+
+a.btn-green {
+	background: #7bc00e;
+	width: 7.111rem;
+	color: #fff;
+}
+
+a.btn-green .span {
+	
+}
+
+a.btn-green-line {
+	border: 1px solid #7bc00e;
+	background: #fff;
+	padding: .05926rem;
+	width: 6.9333rem;
+	border-radius: 1.3333rem;
+	height: 1.3333rem;
+	color: #fff;
+	overflow: hidden;
+}
+
+a.btn-green-line div {
+	background: #7bc00e;
+	width: 100%;
+	height: 100%;
+	display: block;
+	border-radius: 1.3333rem;
+	overflow: hidden;
+}
+
+a.btn-green-line div i {
+	margin-right: 8px;
+}
+
+a.btn-green-line div i, a.btn-green-line div span {
+	vertical-align: middle;
+}
+
+a.btn-red-line {
+	border: 1px solid #ff4400;
+}
+
+a.btn-red-line div {
+	background: #ff4400;
+}
+
+a.btn-gray-line {
+	border: 1px solid #a0a0a0;
+}
+
+a.btn-gray-line div {
+	background: #a0a0a0;
+}
+
+a.btn-gray {
+	background-color: #f5f5f5;
+	color: #333;
+	border-color: #dcdcdc;
+}
+
+a.btn-red {
+	background-color: #ff2501;
+	color: #fff;
+	border-color: #ff2501;
+}
+
+a.btn-blue {
+	background: #4fc1e9;
+	border: none;
+	color: #fff
+}
+
+a.btn-blue-ng {
+	background: none;
+	border-color: #4fc1e9;
+	color: #4fc1e9
+}
+
+a.btn-ok {
+	border-color: #ff3c00;
+	color: #ff3c00
+}
+
+a.click {
+	background-blend-mode: darken;
+}
+
+a.btn:active {
+	background-blend-mode: darken;
+}
+
+a.btn::selection {
+	background: none
+}
+
+.disabled {
+	cursor: default;
+	background-color: #e6e6e6;
+	background-image: none;
+	opacity: 0.65;
+	filter: alpha(opacity = 65);
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <title>添加招工地区推荐</title>
+    <link rel="stylesheet" type="text/css" href="../../static/tsh/1.0.0/themes/easyui.css?gversion=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="../../static/tsh/1.0.0/themes/style.css?gversion=1.0.0" />
+    <link rel=stylesheet  href="../../static/tsh/1.0.0/plugins/ueditor/themes/default/css/ueditor.min.css" />
+    <script src="../../static/tsh/1.0.0/jquery.min.js?gversion=1.0.0"></script>
+    <script src="../../static/tsh/1.0.0/jquery.easyui.min.js?gversion=1.0.0"></script>
+    <script src="../../static/tsh/1.0.0/jquery.easyui.extend.min.js?gversion=1.0.0"></script>
+    <script src="../../static/tsh/1.0.0/webHelper.js"></script>
+ 
+    <style type="text/css">   
+       .datagrid-header {
+          position: absolute; visibility: hidden;
+       }
+	   
+   </style>           
+</head>
+<body style="margin:0 20px;">
+<div id="tsh-title">
+    <h3><span class="t1">添加招工地区推荐</span></h3>
+    <div class="title-border"></div>
+</div>
+<div>
+<form action="#" id="submit_form">
+<input type="hidden" id="areaIds">
+<input type="hidden" id="jobIds">
+  <table>
+    <tr height="40px">
+     <td width="20%" align="right">&nbsp;</td>
+      <td>
+             <span><font color="#FF0000">设置网点生活服务首页的热门招工推荐，同地区最多可添加三个职位</font></span><br>   
+      </td>
+    </tr>  
+    <tr height="40px">
+          <td width="20%" align="right"><font color="#FF0000">*</font>推荐地区：</td>
+          <td align="left">            
+           	<select name="country" id="country"  class="easyui-combobox" style="height:28px;width:120px;">
+				<option value="全国">全国</option>		
+			</select>
+           <input name="province" id="province" prompt="请选择省份"  class="easyui-combobox" style="height:28px;width:120px;"/>         <input name="city" id="city" prompt="请选择市区"          class="easyui-combobox" style="height:28px;width:120px;"/>
+           </td>     
+    </tr>
+    <tr height="40px">
+          <td width="20%" align="right">&nbsp;</td>
+          <td align="left">            
+               <label><a id="searchId" class='btn btn-2' href="#" onClick="platformCommendDetail.confirmArea();" >确认</a></label>
+               <label>
+                注：可直接进行全国、省、市级设置，优先低级别地区的显示，即若同时设置了省、市级推荐显示市级的推荐，“全国”可覆盖所有未设置的省市地区
+               </label>
+           </td>     
+    </tr>
+    <tr height="40px">
+          <td width="20%" align="right"><font color="#958080">已选择：</font></td>
+          <td align="left">
+            <label id="lab_area">全国</label>
+           </td>     
+    </tr>
+    <tr height="40px">
+          <td width="20%" align="right"><font color="#FF0000">*</font>选择职位：</td>
+          <td align="left">
+            <input name="provinceId" id="provinceId" prompt="选择省"  class="easyui-combobox" style="height:28px;width:120px;"/>
+            <input name="cityId"     id="cityId" prompt="选择市"  class="easyui-combobox" style="height:28px;width:120px;"/>
+            <input name="categoryPid" id="categoryPid" prompt="选择工种" class="easyui-combobox" style="height:28px;width:120px;"/>
+            <input name="categoryCid" id="categoryCid" prompt="选择职位" class="easyui-combobox" style="height:28px;width:120px;"/>
+           </td>     
+    </tr>
+    <tr>
+          <td width="20%" align="right">&nbsp;</td>
+          <td align="left">
+           <div style="height:200px;border:1px solid #958080;width:500px;overflow: auto;">
+               <table id="dataGrid" class="easyui-datagrid">
+               </table>
+            </div>
+          </td>     
+    </tr>
+    <tr height="40px">
+          <td width="20%" align="right">&nbsp;</td>
+          <td align="left">
+            <label><a id="searchId" class='btn btn-2' href="#" onClick="platformCommendDetail.confirmJob();" >确认</a></label>
+           </td>     
+    </tr>
+    <tr >
+          <td width="20%" align="right"><font color="#958080">已选择：</font></td>
+          <td align="left">
+            <table>
+              <tr>
+              <td>
+                <label id="selected_area">
+                </label>
+              </td>
+              </td>
+              </tr>
+            </table>            
+          </td>     
+    </tr>
+    <tr  height="40px">
+     <td width="20%" align="right">&nbsp;</td>
+      <td>
+          <hr style="height:1px;border:none;border-top:1px dashed #958080;" >   
+      </td>
+    </tr>                             
+    <tr>
+     <td width="20%" align="right">&nbsp;</td>
+      <td>
+           <!--   <span><font color="#FF0000">已设置江苏省-常州市的2个推荐职位</font></span><br><br> -->
+             <label><a id="searchId" class='btn btn-1' href="#" onClick="platformCommendDetail.saveJob();" >保存</a></label>
+             <label><a class="btn" href="/views/recommend/list.html" id="back">返回</a></label>     
+      </td>
+    </tr>
+  </table>
+  </form>
+</div>
+<script type="text/javascript"  src="../../static/tsh/common/commonTools.js" ></script>
+ <script type="text/javascript" src="/static/tsh/common/initCommomData.js"></script>
+<script type="text/javascript" src="/static/tsh/recommend/post.js"></script>
+</body>
+</html>

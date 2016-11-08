@@ -1,0 +1,44 @@
+#inhot #main {
+	top: 15rem;
+}
+
+#inhot .inhot-banner {
+	height: 11rem
+}
+
+#inhot .inhot-banner li {
+	float: left;
+	height: 5rem
+}
+
+#inhot .inhot-banner li a {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+#inhot .inhot-banner li a img {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+#inhot .inhot-banner li.li1 {
+	width: 100%;
+}
+
+#inhot .inhot-banner li.li2 {
+	width: 33%;
+}
+
+#inhot .inhot-banner li.li3 {
+	width: 33%;
+}
+
+#inhot .inhot-banner li.li4 {
+	width: 33%;
+}
+
+#inhot-list #main {
+	top: 12.6rem;
+}
